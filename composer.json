@@ -1,0 +1,36 @@
+{
+  "name": "huijiewei/yii2-timezone",
+  "description": "This library allows you to detect a user's timezone from within their browser. It is often useful to use JSTZ in combination with a timezone parsing library such as Moment Timezone.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "type": "yii2-extension",
+  "homepage": "https://github.com/huijiewei/yii2-timezone.git",
+  "keywords": [
+    "yii2",
+    "extension",
+    "timezone",
+    "assets"
+  ],
+  "authors": [
+    {
+      "name": "Huijie Wei",
+      "email": "huijiewei@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.1.3",
+    "yiisoft/yii2": "^2.0",
+    "npm-asset/jstz": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "huijiewei\\timezone\\": "src"
+    }
+  },
+  "repositories": {
+    "asset": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  }
+}
