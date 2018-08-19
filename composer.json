@@ -20,6 +20,8 @@
   "require": {
     "php": "^7.1.3",
     "yiisoft/yii2": "^2.0",
+    "huijiewei/select2": "^2.0",
+    "huijiewei/fontawesome": "^2.0",
     "npm-asset/jstz": "^2.0"
   },
   "autoload": {
