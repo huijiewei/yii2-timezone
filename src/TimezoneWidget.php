@@ -9,6 +9,7 @@
 namespace huijiewei\timezone;
 
 use huijiewei\select2\Select2Widget;
+use yii\base\InvalidArgumentException;
 use yii\bootstrap\Widget;
 use yii\helpers\ArrayHelper;
 use yii\web\AssetBundle;
@@ -21,6 +22,7 @@ class TimezoneWidget extends Widget
 
     public $label = '请选择时区';
     public $language = 'zh_CN';
+    public $getCurrentTimeAjaxUrl = '';
     public $getCurrentTimeMessage = '正在获取时间...';
 
     public $onChange;
@@ -34,6 +36,10 @@ class TimezoneWidget extends Widget
     {
         parent::init();
 
+        if (empty($this->getCurrentTimeAjaxUrl)) {
+            throw new InvalidArgumentException('请先设置 getCurrentTimeAjaxUrl');
+        }
+
         $this->registerAssetBundle();
         $this->registerJavascript();
     }
@@ -45,7 +51,7 @@ class TimezoneWidget extends Widget
 
     public function registerJavascript()
     {
-        $ajaxUrl = \Yii::$app->getUrlManager()->createUrl(['site/timezone']);
+        $ajaxUrl = $this->getCurrentTimeAjaxUrl;
 
         $autoDeter = $this->auto ? 'true' : 'false';
 
