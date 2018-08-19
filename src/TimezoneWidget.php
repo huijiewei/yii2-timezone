@@ -71,17 +71,17 @@ class TimezoneWidget extends Widget
             hp.find('.fa').removeClass('fa-clock-o fa-info-circle').addClass('fa-spinner fa-pulse');
             hp.find('.time').html('{$this->getCurrentTimeMessage}');
 
-            $.getJSON('{$ajaxUrl}',{timezone:timezone},function(req) {
+            $.getJSON('{$ajaxUrl}', {timezone:timezone} ,function(req) {
                 hp.find('.fa').removeClass('fa-spinner fa-pulse').addClass('fa-clock-o');
                 var fmt = req.format;
                 var time = moment(req.time);
                 hp.find('.time').html(time.format(fmt));
 
-                $.doTimeout(60000, function(){
+                setInterval(function() {
                     time.add(60, 'seconds');
                     hp.find('.time').html(time.format(fmt));
                     return true;
-                });
+                }, 60000);
 
                 if(onChange != null) {
                     onChange(req);
