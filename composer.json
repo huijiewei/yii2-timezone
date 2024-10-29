@@ -18,10 +18,10 @@
     }
   ],
   "require": {
-    "php": "^7.1.3",
+    "php": ">=8.0.2",
     "yiisoft/yii2": "^2.0",
-    "huijiewei/yii2-select2": "^2.0",
-    "huijiewei/yii2-fontawesome": "^2.0",
+    "huijiewei/yii2-select2": "^3.0",
+    "huijiewei/yii2-fontawesome": "^3.0",
     "npm-asset/jstz": "^2.0"
   },
   "autoload": {
